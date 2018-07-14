@@ -1,0 +1,27 @@
+{  
+  "name": "MyTaskList",
+  "permissions": [
+    	"http://*/",
+    	"http://*/*",
+    	"https://*/",
+    	"https://*/*"
+  	],
+  "manifest_version": 2,  //版本
+  "version": "0.9.0",  
+  "description": "Management my everyday's task lists.",  
+  "permissions":[
+		"http://www.echargenet.com/*"
+	],
+  "browser_action": {  
+    "default_icon": "icon.png" ,
+    "default_title": "My Task List",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    	{
+    	"matches": ["http://www.echargenet.com/*"],
+    	"js": ["jquery.min.js","contentscript.js"],
+    	"run_at":"document_end"
+    	}
+   ]  
+} 
